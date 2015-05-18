@@ -24,7 +24,7 @@ Usage - In a Nutshell
 -----
 ```java
 // Create a Watson instance with your URL and credentials
-Watson watson = new Watson("someuser", "xxxxxxx", "link to watson instance");
+JWatson watson = new JWatson("someuser", "xxxxxxx", "https://watson-wdc01.ihost.com/instance/518/deepqa");
 
 // Query Watson to retrieve answers for a specific question
 WatsonAnswer answer = watson.askQuestion("Who is Angela Merkel?");
@@ -49,6 +49,11 @@ Ping Service
 boolean isAvailable = watson.ping();
 System.out.print(isAvailable ? "Watson Service is available" : "Watson Service is not available");
 ```
+
+Known bugs and issues
+----------------
+
+* University instances can't access the feedback and ping endpoint at the moment
 
 License
 -------
