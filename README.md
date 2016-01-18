@@ -6,19 +6,12 @@ A Java wrapper for the IBM Watson DQA service.
 Getting started
 ---------------
 
-The latest release is [1.0](https://github.com/...).
+The latest release is [1.0](https://github.com/tudarmstadt-lt/jwatson/releases/tag/1.0.0).
 
-It is available in Maven Central as
-[](http://search.maven.org/#artifactdetails%7C):
+Build
+---------------
 
-```xml
-<dependency>
-  <groupId></groupId>
-  <artifactId></artifactId>
-  <version></version>
-</dependency>
-```
-
+Use `mvn package` to build jwatson.
 
 Usage - In a Nutshell
 -----
