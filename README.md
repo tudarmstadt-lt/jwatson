@@ -6,7 +6,7 @@ A Java wrapper for the IBM Watson DQA service.
 Getting started
 ---------------
 
-The latest release is [jwatson 1.1](https://github.com/tudarmstadt-lt/jwatson/releases/tag/1.0.0).
+The latest release is [jwatson 1.0](https://github.com/tudarmstadt-lt/jwatson/releases/tag/1.0.0).
 
 Build
 ---------------
@@ -34,23 +34,15 @@ public static void main(String[] args) throws IOException {
 }        
 ```
 
-Question & Answer Service
--------
+#### Note
 
-Feedback Service
--------
+* Make sure that the URL contains a trailing slash at the end.
 
-Ping Service
-----
-```java
-boolean isAvailable = watson.ping();
-System.out.print(isAvailable ? "Watson Service is available" : "Watson Service is not available");
-```
 
 Known bugs and issues
 ----------------
 * Ping and Feedback endpoints are not implemented yet.
-* Make sure that the URL contains a trailing slash at the end.
+* To use JWatson with the Bluemix QA service instead of an university (private-) instance, you need make slightly modifications in the JSON structure.  
 
 License
 -------
