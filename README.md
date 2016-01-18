@@ -1,7 +1,7 @@
-jwatson [![Build Status](https://magnum.travis-ci.com/Tooa/jwatson.svg?token=fU3LeFzvsi3Z9zuFsRzz)](https://magnum.travis-ci.com/Tooa/jwatson)
+jwatson
 =======
 
-A Java wrapper for the IBM Watson DQA service
+A Java wrapper for the IBM Watson DQA service.
 
 Getting started
 ---------------
@@ -15,7 +15,7 @@ It is available in Maven Central as
 <dependency>
   <groupId></groupId>
   <artifactId></artifactId>
-  <version>1.0</version>
+  <version></version>
 </dependency>
 ```
 
@@ -23,18 +23,22 @@ It is available in Maven Central as
 Usage - In a Nutshell
 -----
 ```java
-// Create a Watson instance with your URL and credentials
-JWatson watson = new JWatson("someuser", "xxxxxxx", "https://watson-wdc01.ihost.com/instance/518/deepqa");
+public static void main(String[] args) throws IOException {
+   // Create a Watson instance with your URL and credentials
+   JWatson watson = new JWatson("username", "password", "https://url/instance/xxxxx/deepqa/");
 
-// Query Watson to retrieve answers for a specific question
-WatsonAnswer answer = watson.askQuestion("Who is Angela Merkel?");
+   // Query Watson to retrieve answers for a specific question
+   // WatsonAnswer answer = watson.askQuestion("Who is Angela Merkel?");
 
-// ... or use the QuestionBuilder to construct complex questions for Watson
-WatsonQuestion question = new WatsonQuestion.QuestionBuilder("Who is Anglea Merkel?")
-                .setNumberOfAnswers(3) // Provide three possible answers
-                .formatAnswer()        // Instruct Watson to deliver answers in HTML 
-                .create();
-WatsonAnswer answer = watson.askQuestion(question);             
+   // ... or use the QuestionBuilder to construct complex questions for Watson
+   WatsonQuestion question = new WatsonQuestion.QuestionBuilder("Who is Angela Merkel?")
+        .setNumberOfAnswers(3) // Provide three possible answers
+        .formatAnswer()        // Instruct Watson to deliver answers in HTML
+        .create();
+
+   WatsonAnswer answer = watson.askQuestion(question);
+   System.out.println(answer);
+}        
 ```
 
 Question & Answer Service
@@ -52,14 +56,14 @@ System.out.print(isAvailable ? "Watson Service is available" : "Watson Service i
 
 Known bugs and issues
 ----------------
-
-* University instances can't access the feedback and ping endpoint at the moment
+* Ping and Feedback endpoints are not implemented yet.
+* Make sure that the URL contains a trailing slash at the end.
 
 License
 -------
 
 ```
-Copyright 2015 Technische Universität Darmstadt.
+Copyright 2016 Technische Universität Darmstadt.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

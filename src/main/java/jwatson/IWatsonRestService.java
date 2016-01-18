@@ -1,5 +1,5 @@
 /*
- *  Copyright 2015 Technische Universität Darmstadt
+ *  Copyright 2016 Technische Universität Darmstadt
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -25,9 +25,11 @@ import jwatson.answer.WatsonAnswer;
 import jwatson.feedback.Feedback;
 import jwatson.question.WatsonQuestion;
 
+import java.io.IOException;
+
 public interface IWatsonRestService {
-    WatsonAnswer askQuestion(WatsonQuestion question);
-    WatsonAnswer askQuestion(String questionText);
+    WatsonAnswer askQuestion(WatsonQuestion question) throws IOException;
+    WatsonAnswer askQuestion(String questionText) throws IOException;
     boolean sendFeedback(Feedback feedback);
     boolean ping();
 }

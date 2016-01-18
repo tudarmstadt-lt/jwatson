@@ -1,5 +1,5 @@
 /*
- *  Copyright 2015 Technische Universität Darmstadt
+ *  Copyright 2016 Technische Universität Darmstadt
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -24,7 +24,6 @@ package jwatson.answer;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import jwatson.util.CustomEvidenceDeserializer;
-import org.apache.http.client.fluent.Content;
 
 import java.util.Collections;
 
@@ -46,7 +45,7 @@ public class WatsonAnswer {
      *
      * @param content
      */
-    public static WatsonAnswer createAnswerFromContent(Content content) {
+    public static WatsonAnswer createAnswerFromContent(String content) {
 
         if(content == null) {
             return new WatsonAnswer();
@@ -56,7 +55,7 @@ public class WatsonAnswer {
                 .registerTypeHierarchyAdapter(Evidencelist.class, new CustomEvidenceDeserializer())
                 .create();
 
-        WatsonAnswer answer = gson.fromJson(content.asString(), WatsonAnswer.class);
+        WatsonAnswer answer = gson.fromJson(content, WatsonAnswer.class);
         answer.question.getEvidencelist().removeAll(Collections.singleton(null));
 
         return answer;
