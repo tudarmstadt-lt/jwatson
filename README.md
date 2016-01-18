@@ -6,12 +6,12 @@ A Java wrapper for the IBM Watson DQA service.
 Getting started
 ---------------
 
-The latest release is [1.0](https://github.com/tudarmstadt-lt/jwatson/releases/tag/1.0.0).
+The latest release is [jwatson 1.1](https://github.com/tudarmstadt-lt/jwatson/releases/tag/1.0.0).
 
 Build
 ---------------
 
-Use `mvn package` to build jwatson.
+Use `sbt clean compile assembly` to build the project. The fat `jar` file can be found in the `/target` folder.
 
 Usage - In a Nutshell
 -----
